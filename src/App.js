@@ -8,7 +8,7 @@ const App = () => {
   const APP_ID = (process.env.REACT_APP_APP_ID)
   const APP_KEY = (process.env.REACT_APP_APP_KEY); 
   
-  const exampleReq = "https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}" // from Edamam documentation
+  const exampleReq = `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}` 
  
   return(
     
