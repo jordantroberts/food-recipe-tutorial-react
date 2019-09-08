@@ -27,7 +27,9 @@ const App = () => {
         </button>
       </form>
       {recipes.map(recipe =>(
-        <Recipe title={recipe.recipe.label} calories={recipe.recipe.calories}
+        <Recipe 
+        key={recipe.recipe.label}
+        title={recipe.recipe.label} calories={recipe.recipe.calories}
         image={recipe.recipe.image}/> // To access the information, create title, calories and image props and set it equal to the API call title (called recipe.recipe twice because of the JSON data) 
       ))}
     </div>
