@@ -52,6 +52,7 @@ const App = () => {
           Search
         </button>
       </form>
+      <div className="recipes">
       {recipes.map(recipe => (
         <Recipe
           key={recipe.recipe.label}
@@ -61,6 +62,7 @@ const App = () => {
           ingredients={recipe.recipe.ingredients}
         /> // To access the information, create title, calories and image props and set it equal to the API call title (called recipe.recipe twice because of the JSON data)
       ))}
+      </div>
     </div>
   );
 };
