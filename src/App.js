@@ -57,7 +57,7 @@ const App = () => {
         <Recipe
           key={recipe.recipe.label}
           title={recipe.recipe.label}
-          calories={recipe.recipe.calories}
+          calories={recipe.recipe.calories.toFixed(2)}
           image={recipe.recipe.image}
           ingredients={recipe.recipe.ingredients}
         /> // To access the information, create title, calories and image props and set it equal to the API call title (called recipe.recipe twice because of the JSON data)
