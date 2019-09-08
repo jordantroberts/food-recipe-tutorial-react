@@ -6,7 +6,10 @@ const App = () => {
   const APP_ID = process.env.REACT_APP_APP_ID;
   const APP_KEY = process.env.REACT_APP_APP_KEY;
 
+  // create a state for recipes:
   const [recipes, setRecipes] = useState([]); // set equal to useState and add an empty array for now because we are going to have an array of objects (which we can see from the data returned by the API call)
+  // create a state for the search:
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     getRecipes();
@@ -18,10 +21,16 @@ const App = () => {
     console.log(data.hits);
     setRecipes(data.hits);
   }
+
+  const updateSearch = e => {
+    // need to change state of search from empty string to what user types
+    setSearch(e.target.value);
+  }
+
   return (
     <div className="App">
       <form className="search-form">
-        <input className="search-bar" type="text" />
+        <input className="search-bar" type="text" value={search} onChange={updateSearch}/>
         <button className="search-button" type="submit">
           Search
         </button>
