@@ -5,13 +5,19 @@ Building a food recipe app with React using <a href="https://www.youtube.com/wat
 
 # Running this app
 
-1. CLone this repo 
-2. `cd` into this repo from the terminal 
-3. Type `npm` start 
+1. CLone this repo
+2. `cd` into this repo from the terminal
+3. Type `npm` start
 4. Visit `localhost:3000`
 
 ## Using this app
 
-1. Follow steps 1 - 4 above 
-2. Type in ingredients into the search bar and press "Search" and a list of recipes together with a photo, calorie content and ingredients will be displayed that match your search. 
+1. Follow steps 1 - 4 above
+2. Type in ingredients into the search bar and press "Search".
+3. A list of recipes together with a photo, calorie content and ingredients will be displayed that match your search.
 
+## Screenshot
+
+<div align="center">
+    <img src="Screenshot.png" width="600px"</img>
+</div>
