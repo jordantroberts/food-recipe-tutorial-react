@@ -10,13 +10,15 @@ const App = () => {
   const [recipes, setRecipes] = useState([]); // set equal to useState and add an empty array for now because we are going to have an array of objects (which we can see from the data returned by the API call)
   // create a state for the search:
   const [search, setSearch] = useState('');
+  // create another state that only submits itself once we click the search button (otherwise it will rerender every time we type a character):
+  const [query, setQuery] = useState('chicken'); 
 
   useEffect(() => {
     getRecipes();
   }, []); // use Effect will run when page renders. Adding the [] means it only runs once. 
 
   const getRecipes = async () => {
-    const response = await fetch(`https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`)
+    const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`)
     const data = await response.json(); // will format the response to json so we can work with the data. Add await as some data won't come back instantly. 
     console.log(data.hits);
     setRecipes(data.hits);
