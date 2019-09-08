@@ -15,7 +15,7 @@ const App = () => {
 
   useEffect(() => {
     getRecipes();
-  }, []); // use Effect will run when page renders. Adding the [] means it only runs once. 
+  }, [query]); // Now this will run only when we click the submit button as that's the only time the query value is going to change.
 
   const getRecipes = async () => {
     const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`)
@@ -29,9 +29,16 @@ const App = () => {
     setSearch(e.target.value);
   }
 
+  const getSearch = e => {
+    // to be ran whenever we submit the form. 
+    // First thing I want to do is prevent the page refreshing:
+    e.preventDefault();
+    setQuery(search);
+  }
+
   return (
     <div className="App">
-      <form className="search-form">
+      <form onSubmit={getSearch} className="search-form">
         <input className="search-bar" type="text" value={search} onChange={updateSearch}/>
         <button className="search-button" type="submit">
           Search
